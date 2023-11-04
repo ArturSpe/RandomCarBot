@@ -14,8 +14,8 @@ public class GoogleRequestImpl implements Request {
     public String request(String name) {
         String url =
                 "https://www.googleapis.com/customsearch/v1?" +
-                        "key=AIzaSyDoadjg3HOXJi2s2T56y5cPj6lbXpBgLQg&" +
-                        "cx=f72ca1d5dbe454578&" +
+                        "key=***" +
+                        "cx=***" +
                         "q="+name+
                         "&num=10" +
                         "&searchType=image";

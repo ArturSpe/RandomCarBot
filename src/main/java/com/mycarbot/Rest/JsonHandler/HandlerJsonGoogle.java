@@ -5,25 +5,25 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mycarbot.Model.Answers.Answer;
 import com.mycarbot.Model.Answers.Google.AnswerGoogle;
 import com.mycarbot.Model.Answers.Google.Item;
+import com.mycarbot.Utils.Impl.JsonParser;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component("googleHandlerJson")
-public class HandlerJsonGoogle implements HandlerJson {
+public class HandlerJsonGoogle implements HandlerJson <AnswerGoogle> {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final JsonParser jsonParser;
 
-    public HandlerJsonGoogle (){
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    public HandlerJsonGoogle (JsonParser jsonParser){
+        this.jsonParser = jsonParser;
     }
     @Override
-    public <T extends Answer> T handle(String body, Class<T> tClass) {
+    public AnswerGoogle handle(String body) {
         AnswerGoogle answer = new AnswerGoogle();
             try {
-                answer = objectMapper.readValue(body, AnswerGoogle.class);
-//                int i = 1/0;
+                answer = jsonParser.readValue(body, AnswerGoogle.class);
             }catch (Exception e) {
                 System.out.println(e.getMessage());
                 answer = new AnswerGoogle();
@@ -33,6 +33,6 @@ public class HandlerJsonGoogle implements HandlerJson {
                         .build());
                 answer.setItems(items);
             }
-        return (T) answer;
+        return answer;
     }
 }

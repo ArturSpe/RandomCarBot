@@ -15,9 +15,9 @@ public class GoogleRequestImpl implements Request {
         String url =
                 "https://www.googleapis.com/customsearch/v1?" +
                         "key=***" +
-                        "cx=***" +
-                        "q="+name+
-                        "&num=10" +
+                        "&cx=***" +
+                        "&q="+name+
+                        "&num=5" +
                         "&searchType=image";
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<String> httpEntity = new HttpEntity<>(headers);

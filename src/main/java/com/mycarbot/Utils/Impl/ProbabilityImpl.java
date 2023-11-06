@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 @Component
 public class ProbabilityImpl implements Probability {
-    private final int percent = 10;
+    private final int percent = 40;
     private final Random random = new Random();
     @Override
     public boolean getProbability() {

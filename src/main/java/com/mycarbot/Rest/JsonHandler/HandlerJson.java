@@ -6,11 +6,11 @@ import com.mycarbot.Factorys.Impl.BeanFactoryImpl;
 import org.springframework.stereotype.Component;
 
 @Component
-public interface HandlerJson {
+public interface HandlerJson <A extends Answer> {
 
      BeanFactory b = new BeanFactoryImpl();
 
-     <T extends Answer> T handle (String body, Class<T> tClass);
+      A handle (String body);
 
      static HandlerJson getInstance(String name){
           return b.getBeanByName(name, HandlerJson.class);

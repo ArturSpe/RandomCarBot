@@ -60,15 +60,16 @@ public class RandomCarImpl implements RandomCar {
                     .mark(nameMark)
                     .model(nameModel)
                     .year(yearModel)
+                    .link(searchImageService.getPhotoLink(nameMark + " " + nameModel + " " + yearModel))
                     .build();
             System.out.println(inlineField);
 
         }else {
             inlineField = InlineField.builder()
                     .mark("бутылке")
+                    .link("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Bouteille.jpg/800px-Bouteille.jpg")
                     .build();
         }
-        inlineField.setLink(searchImageService.getPhotoLink(inlineField.toString()));
         return inlineField;
     }
 }

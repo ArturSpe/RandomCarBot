@@ -12,7 +12,11 @@ public class BeanFactoryImpl implements BeanFactory {
     private ConfigurableApplicationContext applicationContext;
     @Override
     public <T> T getBeanByName(String nameBean, Class<T> classT) {
-
         return applicationContext.getBean(nameBean, classT);
     }
+    @Override
+    public <T> T getBeanByClass(Class<T> tClass){
+        return applicationContext.getBean(tClass);
+    }
+
 }

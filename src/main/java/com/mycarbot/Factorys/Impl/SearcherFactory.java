@@ -1,7 +1,7 @@
 package com.mycarbot.Factorys.Impl;
 
 import com.mycarbot.Factorys.BeanFactory;
-import com.mycarbot.Rest.JsonHandler.HandlerJson;
+import com.mycarbot.Rest.HandlerJson;
 import com.mycarbot.Rest.Request;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

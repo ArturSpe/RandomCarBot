@@ -1,21 +1,21 @@
 package com.mycarbot.Rest.JsonHandler;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mycarbot.Model.Answers.Answer;
 import com.mycarbot.Model.Answers.Google.AnswerGoogle;
 import com.mycarbot.Model.Answers.Google.Item;
+import com.mycarbot.Rest.HandlerJson;
 import com.mycarbot.Utils.Impl.JsonParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component("googleHandlerJson")
-public class HandlerJsonGoogle implements HandlerJson <AnswerGoogle> {
+public class HandlerJsonGoogle implements HandlerJson<AnswerGoogle> {
 
     private final JsonParser jsonParser;
 
+    @Autowired
     public HandlerJsonGoogle (JsonParser jsonParser){
         this.jsonParser = jsonParser;
     }

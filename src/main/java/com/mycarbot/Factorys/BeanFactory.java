@@ -6,4 +6,6 @@ import org.springframework.stereotype.Component;
 public interface BeanFactory {
 
     <T> T getBeanByName (String nameBean, Class<T> classT);
+
+    <T> T getBeanByClass(Class<T> tClass);
 }

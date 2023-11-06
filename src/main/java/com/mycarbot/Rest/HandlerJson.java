@@ -1,4 +1,4 @@
-package com.mycarbot.Rest.JsonHandler;
+package com.mycarbot.Rest;
 
 import com.mycarbot.Model.Answers.Answer;
 import com.mycarbot.Factorys.BeanFactory;
@@ -13,6 +13,8 @@ public interface HandlerJson <A extends Answer> {
       A handle (String body);
 
      static HandlerJson getInstance(String name){
-          return b.getBeanByName(name, HandlerJson.class);
+         return b.getBeanByName(name, HandlerJson.class);
      }
+
+
 }

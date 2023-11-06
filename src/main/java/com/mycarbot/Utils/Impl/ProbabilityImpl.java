@@ -11,6 +11,6 @@ public class ProbabilityImpl implements Probability {
     @Override
     public boolean getProbability() {
         int trigger = random.nextInt(99) + 1;
-        return trigger < percent;
+        return trigger <= percent;
     }
 }
